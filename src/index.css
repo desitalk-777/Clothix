@@ -1,0 +1,83 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  body {
+    @apply text-stone-900;
+  }
+
+  /* Elegant scrollbar */
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #d6d3d1; border-radius: 2px; }
+}
+
+@layer utilities {
+  /* 3D card perspective */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+}
+
+/* ── Premium Keyframes ─────────────────────────────────── */
+@keyframes shimmer {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10%       { transform: translate(-2%, -2%); }
+  20%       { transform: translate(2%, 2%); }
+  30%       { transform: translate(-1%, 1%); }
+  40%       { transform: translate(1%, -1%); }
+  50%       { transform: translate(-2%, 2%); }
+  60%       { transform: translate(2%, -2%); }
+  70%       { transform: translate(-1%, -1%); }
+  80%       { transform: translate(1%, 1%); }
+  90%       { transform: translate(-2%, 1%); }
+}
+
+/* Shimmer loading placeholder */
+.shimmer-line::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.6) 50%, transparent 100%);
+  animation: shimmer 1.4s infinite;
+}
+
+/* Floating badge on hero */
+.float-badge {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Subtle grain overlay for luxury feel */
+.grain-overlay::before {
+  content: '';
+  position: fixed;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.018;
+  pointer-events: none;
+  z-index: 9999;
+  animation: grain 8s steps(10) infinite;
+}
+
