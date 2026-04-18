@@ -47,7 +47,13 @@ export default function Login() {
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         className="w-full max-w-sm"
       >
-        <motion.div variants={container} initial="hidden" animate="visible" className="text-center mb-10">
+        <motion.div variants={container} initial="hidden" animate="visible" className="text-center mb-10 flex flex-col items-center">
+          <motion.img 
+            variants={item}
+            src="/logo.jpg" 
+            alt="Clothix Logo" 
+            className="h-16 w-auto object-contain mb-4" 
+          />
           <motion.h1 variants={item} className="text-2xl tracking-[0.35em] uppercase font-light text-stone-900">Clothix</motion.h1>
           <motion.p variants={item} className="text-[9px] tracking-[0.4em] uppercase text-stone-400 mt-1">Admin Access</motion.p>
         </motion.div>

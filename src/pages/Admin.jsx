@@ -72,8 +72,13 @@ export default function Admin() {
       {/* Header */}
       <header className="bg-white border-b border-stone-100 sticky top-0 z-30">
         <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
-          <div className="flex items-center gap-6">
-            <Link to="/" className="text-xl tracking-[0.35em] uppercase font-light text-stone-900">Clothix</Link>
+          <div className="flex items-center gap-4">
+            <Link to="/" className="flex items-center gap-3">
+              <img src="/logo.jpg" alt="Clothix" className="h-8 w-auto object-contain" />
+              <div className="hidden sm:block">
+                <span className="text-lg tracking-[0.2em] uppercase font-medium text-stone-900">Clothix</span>
+              </div>
+            </Link>
             <span className="text-[9px] tracking-[0.3em] uppercase text-stone-400 bg-stone-50 border border-stone-100 px-2.5 py-1">Admin</span>
           </div>
           <button

@@ -55,9 +55,14 @@ export default function Store() {
         className="border-b border-[#c9a96e]/30 bg-white/90 backdrop-blur-md sticky top-0 z-30"
       >
         <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
-          <div>
-            <h1 className="text-2xl tracking-[0.35em] uppercase font-semibold text-stone-900">Clothix</h1>
-            <p className="text-xs tracking-[0.4em] uppercase text-[#c9a96e] mt-0.5 font-medium">Luxury Ready-to-Wear</p>
+          <div className="flex items-center gap-4">
+            <Link to="/">
+              <img src="/logo.jpg" alt="Clothix Logo" className="h-10 md:h-12 w-auto object-contain hover:opacity-80 transition-opacity" />
+            </Link>
+            <div className="hidden sm:block border-l border-stone-200 pl-4">
+              <h1 className="text-xl tracking-[0.35em] uppercase font-semibold text-stone-900">Clothix</h1>
+              <p className="text-[10px] tracking-[0.4em] uppercase text-[#c9a96e] mt-0.5 font-medium">Luxury Ready-to-Wear</p>
+            </div>
           </div>
           <Link
             to="/admin"
